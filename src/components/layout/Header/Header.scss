@@ -1,0 +1,172 @@
+// src/components/layout/Header/Header.scss
+
+// Variables locales (temporales hasta tener el sistema completo)
+$color-white: #ffffff;
+$color-primary: #ff1744;
+$color-text-primary: #111827;
+$color-text-secondary: #6b7280;
+$color-gray-100: #f3f4f6;
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$border-radius-sm: 0.25rem;
+$transition-base: 300ms ease-in-out;
+$z-index-header: 1080;
+
+// Responsive breakpoints
+$breakpoint-mobile: 640px;
+$breakpoint-tablet: 768px;
+
+.header {
+  width: 100%;
+  background-color: $color-white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: $z-index-header;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md 0;
+    min-height: 64px;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: $spacing-sm;
+      padding: $spacing-sm 0;
+    }
+  }
+
+  &__logo-section {
+    flex-shrink: 0;
+  }
+
+  &__logo-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform $transition-base;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  &__logo {
+    height: 36px;
+    width: auto;
+    display: block;
+
+    @media (max-width: $breakpoint-mobile) {
+      height: 32px;
+    }
+  }
+
+  &__contact-section {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    @media (max-width: $breakpoint-tablet) {
+      gap: $spacing-sm;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: $spacing-xs;
+      text-align: center;
+    }
+  }
+
+  &__company-text {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: $font-size-xs;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      white-space: normal;
+    }
+  }
+
+  &__phone-button {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-text-primary;
+    font-family: inherit;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: $color-gray-100;
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      justify-content: center;
+      width: fit-content;
+    }
+  }
+
+  &__phone-icon {
+    width: 16px;
+    height: 16px;
+    color: $color-primary;
+    flex-shrink: 0;
+  }
+
+  &__phone-number {
+    font-feature-settings: "tnum" on, "lnum" on; // Números tabulares
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// Container responsive
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 1rem;
+  }
+}
