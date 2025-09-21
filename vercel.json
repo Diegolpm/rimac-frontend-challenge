@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://rimac-front-end-challenge.netlify.app/api/$1"
+    }
+  ]
+}
