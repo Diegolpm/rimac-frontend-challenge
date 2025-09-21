@@ -3,12 +3,12 @@ import {
   useGlobalAppDispatch,
   useGlobalAppState,
 } from "../../store/app-context";
-import { rimacAPI } from "../../proxy/rimac";
-import { AppActions } from "../../domain/app-actions.enum";
-import type { Plans } from "../../domain/plans";
+import { rimacAPI } from "../../services/rimac";
+import { AppActions } from "../../types/app-actions.enum";
+import type { Plans } from "../../types/plans";
 import { useNavigate } from "react-router-dom";
-import homeIcon from "../../assets/icons/IcHomeLight.svg";
-import hospitalIcon from "../../assets/icons/IcHospitalLight.svg";
+import HomeLightIcon from "../../assets/icons/HomeLightIcon.svg";
+import HospitalIcon from "../../assets/icons/HospitalIcon.svg";
 import { rimacRouteModules } from "../../routes";
 import CardPlan from "./components/CardPlan";
 import CardRadioButton from "./components/CardRadioButton";
@@ -57,21 +57,23 @@ const Plans: React.FC = () => {
 
   const availablePlansWithIcons = availablePlans.map((plan) => ({
     ...plan,
-    src: plan.price === 99 ? hospitalIcon : homeIcon,
+    src: plan.price === 99 ? HospitalIcon : HomeLightIcon,
   }));
 
   return (
     <>
-      <section className="plan-section">
-        <div className="plan-section__container">
-          <BackButton />
-          <h2 className="plan-section__title">
+      <section className="plan">
+        <div className="plan__container">
+          <div className="plan__back-container">
+            <BackButton />
+          </div>
+          <h2 className="plan__title">
             {user?.name} ¿Para quién deseas cotizar?
           </h2>
-          <p className="plan-section__description">
+          <p className="plan__description">
             Selecciona la opción que se ajuste más a tus necesidades.
           </p>
-          <div className="plan-section__card-container">
+          <div className="plan__card-container">
             {cardInformation.map((card, index) => (
               <CardRadioButton
                 key={index}

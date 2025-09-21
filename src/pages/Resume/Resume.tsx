@@ -1,4 +1,4 @@
-import FamilyIcon from "../../assets/icons/family.svg";
+import FamilyIcon from "../../assets/icons/FamilyIcon.svg";
 import { useGlobalAppState } from "../../store/app-context";
 import BackButton from "../../shared/components/BackButton/BackButton";
 import "./Resume.scss";

@@ -1,69 +1,199 @@
-# React + TypeScript + Vite
+# Rimac Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Descripción del Proyecto
 
-Currently, two official plugins are available:
+Este proyecto es una solución al Frontend Challenge de Rimac, enfocado en crear una aplicación web moderna que demuestre habilidades en desarrollo frontend utilizando las mejores prácticas y tecnologías actuales.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Características Principales
 
-## Expanding the ESLint configuration
+- ✅ Diseño responsive y mobile-first
+- ✅ Interfaz de usuario intuitiva y accesible
+- ✅ Integración con APIs
+- ✅ Gestión de estado eficiente
+- ✅ Componentes reutilizables
+- ✅ Optimización de rendimiento
+- ✅ Pruebas unitarias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologías Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend Framework:** React
+- **Lenguaje:** TypeScript/JavaScript
+- **Estilos:** CSS Modules/Styled Components
+- **Gestión de Estado:** Context API
+- **Testing:** Jest/Vitest + Testing Library
+- **Build Tool:** Vite/Webpack
+- **Linting:** ESLint + Prettier
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Estructura del Proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── shared/             # Compartidos
+│   ├── components/     # Componentes reutilizables
+│   └── utils/          # Funciones utilitarias
+├── pages/              # Páginas de la aplicación
+├── services/           # Servicios para APIs
+├── store/              # Gestión de estado global
+├── utils/              # Funciones utilitarias
+├── types/              # Definiciones de tipos TypeScript
+├── styles/             # Estilos globales
+└── assets/             # Recursos estáticos
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Instalación y Configuración
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerrequisitos
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (versión 16 o superior)
+- npm/yarn/pnpm
+
+### Pasos de Instalación
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone https://github.com/tu-usuario/rimac-frontend-challenge.git
+   cd rimac-frontend-challenge
+   ```
+
+2. **Instalar dependencias**
+
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+3. **Configurar variables de entorno**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Edita el archivo `.env.local` con tus configuraciones.
+
+4. **Ejecutar en modo desarrollo**
+
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
+
+5. **Abrir en el navegador**
+   ```
+   http://localhost:3000
+   ```
+
+## 📝 Scripts Disponibles
+
+```bash
+npm run dev          # Inicia el servidor de desarrollo
+npm run build        # Construye la aplicación para producción
+npm run preview      # Vista previa de la build de producción
+npm run test         # Ejecuta las pruebas
+npm run test:watch   # Ejecuta las pruebas en modo watch
+npm run lint         # Ejecuta el linter
+npm run lint:fix     # Corrige errores de linting automáticamente
+npm run type-check   # Verifica los tipos TypeScript
 ```
+
+## 🎨 Funcionalidades Implementadas
+
+### ✅ Funcionalidades Completadas
+
+- [ ] Página de inicio con diseño responsivo
+- [ ] Formulario de cotización de seguros
+- [ ] Validación de formularios en tiempo real
+- [ ] Integración con API de Rimac
+- [ ] Manejo de estados de carga y error
+- [ ] Navegación entre pasos del proceso
+- [ ] Resumen de cotización
+- [ ] Diseño mobile-first
+- [ ] Optimización de imágenes
+- [ ] Accesibilidad web (WCAG)
+
+### 🔄 En Desarrollo
+
+- [ ] Funcionalidad adicional 1
+- [ ] Funcionalidad adicional 2
+
+## 🧪 Testing
+
+El proyecto incluye pruebas unitarias para los componentes principales:
+
+```bash
+# Ejecutar todas las pruebas
+npm run test
+
+# Ejecutar pruebas con cobertura
+npm run test:coverage
+
+# Ejecutar pruebas en modo watch
+npm run test:watch
+```
+
+## 📱 Responsive Design
+
+La aplicación está optimizada para:
+
+- 📱 **Mobile:** 320px - 768px
+- 📱 **Tablet:** 768px - 1024px
+- 🖥️ **Desktop:** 1024px+
+
+## 🌐 Navegadores Soportados
+
+- ✅ Chrome (últimas 2 versiones)
+- ✅ Firefox (últimas 2 versiones)
+- ✅ Safari (últimas 2 versiones)
+- ✅ Edge (últimas 2 versiones)
+
+## 🚀 Deployment
+
+### Vercel (Recomendado)
+
+1. Conecta tu repositorio con Vercel
+2. Configura las variables de entorno
+3. Deploy automático en cada push
+
+### Netlify
+
+1. Build command: `npm run build`
+2. Publish directory: `dist`
+3. Configura las variables de entorno
+
+## 🔧 Configuración Adicional
+
+### Variables de Entorno
+
+```env
+VITE_API_BASE_URL=https://api.rimac.com
+VITE_API_KEY=your_api_key_here
+VITE_ENVIRONMENT=development
+```
+
+### Configuración de IDE (VS Code)
+
+Extensiones recomendadas:
+
+- ES7+ React/Redux/React-Native snippets
+- TypeScript Importer
+- Prettier - Code formatter
+- ESLint
+- Auto Rename Tag
+- Bracket Pair Colorizer
+
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🙏 Agradecimientos
+
+- Equipo de Rimac por proporcionar este desafío técnico
+- Comunidad de desarrolladores por las mejores prácticas
+- Recursos y documentación utilizados en el desarrollo
+
+---
+
+**Frontend Challenge de Rimac**

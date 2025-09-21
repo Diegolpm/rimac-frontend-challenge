@@ -4,12 +4,12 @@ import * as yup from "yup";
 import { useForm, type Resolver } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./Forms.scss";
-import { requestGlobalApiActions } from "../../../store/actions";
-import { useGlobalAppDispatch } from "../../../store/app-context";
-import type { UserData } from "../../../domain/user";
+import { requestGlobalApiActions } from "../../../../store/actions";
+import { useGlobalAppDispatch } from "../../../../store/app-context";
+import type { UserData } from "../../../../types/user";
 import { useNavigate } from "react-router-dom";
-import { rimacRouteModules } from "../../../routes";
-import Badge from "../../../shared/components/Badge/Badge";
+import { rimacRouteModules } from "../../../../routes";
+import Badge from "../../../../shared/components/Badge/Badge";
 
 export type InsuranceFormData = yup.InferType<typeof insuranceFormSchema>;
 
@@ -169,6 +169,7 @@ const InsuranceForm: FC<InsuranceFormProps> = () => {
                   Nro. de documento
                 </label>
                 <input
+                  {...register("documentNumber")}
                   id="documentNumber"
                   type="text"
                   inputMode="numeric"

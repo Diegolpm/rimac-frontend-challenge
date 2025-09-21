@@ -1,5 +1,5 @@
-import type { Plans } from "../domain/plans";
-import type { UserInfo } from "../domain/user";
+import type { Plans } from "../types/plans";
+import type { UserInfo } from "../types/user";
 
 const API_BASE_URL = "/api";
 

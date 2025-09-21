@@ -1,6 +1,6 @@
 import { lazy, type FC } from "react";
 import { RimacPaths } from "./routes";
-import Header from "./components/layout/Header/Header";
+import Header from "./shared/components/Header/Header";
 import "./App.scss"; // Cambiamos por un archivo CSS principal
 import {
   Route,
@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { useGlobalAppState } from "./store/app-context";
 import Stepper from "./shared/components/Stepper/Stepper";
+import Footer from "./shared/components/Footer/Footer";
 
 const Login = lazy(() => import("./pages/Login/Login"));
 const Plans = lazy(() => import("./pages/Plans/Plans"));
@@ -52,6 +53,7 @@ const App: FC = () => {
           />
         </Routes>
       </div>
+      {!showStepper && <Footer />}
     </>
   );
 };

@@ -31,7 +31,6 @@ $breakpoint-large: 1280px;
 
 .login-section {
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
 
   &__container {
@@ -40,7 +39,6 @@ $breakpoint-large: 1280px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
     z-index: 10;
 
     @media (max-width: $breakpoint-desktop) {

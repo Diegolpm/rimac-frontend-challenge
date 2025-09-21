@@ -1,6 +1,6 @@
-import { AppActions } from "../domain/app-actions.enum";
-import type { UserData } from "../domain/user";
-import { rimacAPI } from "../proxy/rimac";
+import { AppActions } from "../types/app-actions.enum";
+import type { UserData } from "../types/user";
+import { rimacAPI } from "../services/rimac";
 import { type AppDispatch } from "./reducer";
 
 export const getUser = async (

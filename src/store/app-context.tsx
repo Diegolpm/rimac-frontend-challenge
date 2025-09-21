@@ -6,7 +6,7 @@ import {
   useReducer,
 } from "react";
 import { type AppDispatch, initialState, appReducer } from "./reducer";
-import type { AppState } from "../domain/app-store";
+import type { AppState } from "../types/app-store";
 
 type AppGlobalContextProviderProps = PropsWithChildren<{
   testStateProps?: Partial<AppState>;

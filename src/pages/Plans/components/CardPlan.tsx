@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { Plans } from "../../../domain/plans";
+import type { Plans } from "../../../types/plans";
 import Badge from "../../../shared/components/Badge/Badge";
 
 interface CardPlanProps {

@@ -90,10 +90,12 @@ $breakpoint-tablet: 768px;
   }
 
   &__company-text {
-    color: $color-text-secondary;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-medium;
-    white-space: nowrap;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    text-align: right;
 
     @media (max-width: $breakpoint-tablet) {
       font-size: $font-size-xs;

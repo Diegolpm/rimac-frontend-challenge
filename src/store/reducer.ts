@@ -1,8 +1,8 @@
 import type { Dispatch } from "react";
-import type { AppState } from "../domain/app-store";
-import type { UserInfo, UserData } from "../domain/user";
-import type { Plans } from "../domain/plans";
-import { AppActions } from "../domain/app-actions.enum";
+import type { AppState } from "../types/app-store";
+import type { UserInfo, UserData } from "../types/user";
+import type { Plans } from "../types/plans";
+import { AppActions } from "../types/app-actions.enum";
 
 export type DispatchAction<T = any> = {
   type: string;

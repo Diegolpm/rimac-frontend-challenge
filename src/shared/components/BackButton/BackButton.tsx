@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { previousRoute } from "../../../app-globals";
-import backButtonIcon from "../../../assets/icons/Backbutton.svg";
+import BackbuttonIcon from "../../../assets/icons/BackbuttonIcon.svg";
 import "./BackButton.scss";
 
 const BackButton: FC = () => {
@@ -12,7 +12,7 @@ const BackButton: FC = () => {
   };
   return (
     <button className="back" onClick={onBack}>
-      <img src={backButtonIcon} alt="Volver" width={20} height={20} />
+      <img src={BackbuttonIcon} alt="Volver" width={20} height={20} />
       Volver
     </button>
   );

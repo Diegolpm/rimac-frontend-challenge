@@ -1,7 +1,7 @@
 // src/components/layout/Header/Header.tsx
 import React from "react";
-import logoIcon from "../../../assets/icons/logoRimac.svg";
-import telephoneIcon from "../../../assets/icons/GlTelephoneSolid.svg";
+import LogoRimacIcon from "../../../assets/icons/LogoRimacIcon.svg";
+import TelephoneIcon from "../../../assets/icons/TelephoneIcon.svg";
 import "./Header.scss";
 
 interface HeaderProps {
@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({
               className="header__logo-link"
               aria-label="Ir al inicio de Rimac Seguros"
             >
-              <img src={logoIcon} alt="logo" />
+              <img src={LogoRimacIcon} alt="logo" />
             </a>
           </div>
 
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
               onClick={() => handlePhoneClick(phoneNumber)}
               aria-label={`Llamar al ${phoneNumber}`}
             >
-              <img src={telephoneIcon} alt="phone" />
+              <img src={TelephoneIcon} alt="phone" />
               <span className="header__phone-number">{phoneNumber}</span>
             </button>
           </div>

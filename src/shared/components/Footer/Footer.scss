@@ -1,0 +1,48 @@
+@import "../../../styles/abstracts/_variables.scss";
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 24px;
+  width: 100%;
+  background-color: #111827;
+  padding: 2rem;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 0 1.5rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 1rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1rem;
+
+    p {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.1px;
+    }
+  }
+}
