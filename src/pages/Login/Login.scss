@@ -1,0 +1,172 @@
+// src/components/features/HeroSection/HeroSection.scss
+@use "sass:color";
+
+// Variables locales
+$color-primary: #ff1744;
+$color-secondary: #00d4aa;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-900: #111827;
+$color-gray-800: #1f2937;
+$color-gray-700: #374151;
+
+$spacing-4: 1rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-12: 3rem;
+$spacing-16: 4rem;
+
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 1.5rem;
+
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+$breakpoint-mobile: 640px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1280px;
+
+.login-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    z-index: 10;
+
+    @media (max-width: $breakpoint-desktop) {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+    }
+  }
+
+  // Background gradient
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 23, 68, 0.8) 0%,
+      rgba(124, 58, 237, 0.6) 35%,
+      rgba(0, 212, 170, 0.4) 70%,
+      rgba(59, 130, 246, 0.3) 100%
+    );
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle at 30% 20%,
+        rgba(255, 23, 68, 0.15) 0%,
+        transparent 50%
+      );
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(
+        circle at 70% 80%,
+        rgba(0, 212, 170, 0.1) 0%,
+        transparent 50%
+      );
+    }
+  }
+
+  // Image Section - Left
+  &__image-section {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: $spacing-8 $spacing-6;
+    z-index: 5;
+
+    @media (max-width: $breakpoint-desktop) {
+      order: 2;
+      padding: $spacing-6 $spacing-4;
+      min-height: 400px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: $border-radius-2xl;
+    box-shadow: $shadow-2xl;
+    transition: transform 300ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      max-width: 400px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 320px;
+      border-radius: $border-radius-xl;
+    }
+  }
+
+  &__image-overlay {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 23, 68, 0.1) 0%,
+      rgba(0, 212, 170, 0.1) 100%
+    );
+    border-radius: $border-radius-2xl;
+    z-index: -1;
+
+    @media (max-width: $breakpoint-mobile) {
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: $border-radius-xl;
+    }
+  }
+}

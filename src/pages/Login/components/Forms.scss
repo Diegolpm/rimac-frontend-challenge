@@ -1,0 +1,439 @@
+// src/components/features/InsuranceForm/InsuranceForm.scss
+@use "sass:color";
+
+// Variables locales
+$color-primary: #ff1744;
+$color-secondary: #00d4aa;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-text-primary: #111827;
+$color-text-secondary: #6b7280;
+$color-text-muted: #9ca3af;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-error: #ef4444;
+$color-success: #10b981;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-full: 9999px;
+
+$transition-base: 300ms ease-in-out;
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+$breakpoint-mobile: 640px;
+$breakpoint-tablet: 768px;
+
+.insurance-form {
+  width: 100%;
+  padding: $spacing-8 $spacing-6;
+  background-color: $color-white;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-6 $spacing-4;
+  }
+
+  &__container {
+    max-width: 400px;
+    margin: 0 auto;
+
+    &--header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 8px;
+
+      &--title {
+        @media (max-width: $breakpoint-mobile) {
+          padding-right: 32px;
+        }
+      }
+    }
+  }
+
+  // Badge
+  &__badge {
+    display: inline-block;
+    margin-bottom: $spacing-6;
+    padding: 0 8px;
+    background: linear-gradient(86.01deg, #00f4e2 0%, #00ff7f 100%);
+    border-radius: $border-radius-sm;
+
+    &--text {
+      color: $color-text-primary;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-bold;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__background--mobile {
+    display: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  // Header
+  &__header {
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-6;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0%;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 28px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    line-height: 1.5;
+
+    &--highlight {
+      color: $color-text-primary;
+      font-weight: $font-weight-medium;
+      padding: 32px 0;
+    }
+  }
+
+  // Form
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-6;
+  }
+
+  // Field groups
+  &__field-group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+  }
+
+  // Select and input group
+  &__select-wrapper {
+    display: flex;
+    gap: 0;
+    border: 1px solid $color-gray-300;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    background-color: $color-white;
+  }
+
+  &__select {
+    flex: 0 0 120px;
+    padding: $spacing-4;
+    border: none;
+    border-right: 1px solid $color-gray-300;
+    font-size: $font-size-base;
+    color: $color-text-primary;
+    cursor: pointer;
+    outline: none;
+
+    &:focus-within {
+      border-color: #1a5ccf;
+    }
+
+    &--error {
+      border-color: $color-error;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      flex: 0 0 100px;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__input-group {
+    flex: 1;
+    display: flex;
+    position: relative;
+  }
+
+  &__input-label {
+    position: absolute;
+    top: $spacing-2;
+    background-color: $color-white;
+    padding: 0 $spacing-2;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+    z-index: 1;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-6 $spacing-2 $spacing-4 $spacing-2;
+    border: none;
+    font-size: $font-size-base;
+    color: $color-text-primary;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+
+    &--error {
+      border-color: $color-error;
+    }
+
+    &:disabled {
+      background-color: $color-gray-100;
+      cursor: not-allowed;
+    }
+  }
+
+  // Standalone input (phone)
+  .insurance-form__field .insurance-form__input {
+    border: 1px solid $color-gray-300;
+    border-radius: $border-radius-md;
+    background-color: $color-white;
+
+    &:focus {
+      background-color: $color-white;
+    }
+  }
+
+  .insurance-form__field .insurance-form__input-label {
+    position: absolute;
+    top: -6px;
+    left: $spacing-4;
+    background-color: $color-white;
+    padding: 0 $spacing-2;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+    z-index: 1;
+  }
+
+  .insurance-form__field {
+    position: relative;
+  }
+
+  // Checkboxes
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+  }
+
+  &__checkbox-field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+  }
+
+  &__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+    cursor: pointer;
+    font-size: $font-size-sm;
+    line-height: 1.5;
+  }
+
+  &__checkbox-input {
+    // position: absolute;
+    // opacity: 0;
+    // pointer-events: none;
+
+    &:checked {
+      background-color: black;
+      border-color: $color-primary;
+
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &:focus + &-custom {
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    }
+  }
+
+  &__checkbox-custom {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-gray-300;
+    border-radius: $border-radius-sm;
+    background-color: $color-white;
+    transition: all $transition-base;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid $color-white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) scale(0);
+      opacity: 0;
+      transition: all $transition-base;
+    }
+  }
+
+  &__checkbox-text {
+    color: $color-text-secondary;
+  }
+
+  &__link {
+    color: $color-text-primary;
+    text-decoration: underline;
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  // Terms
+  &__terms {
+    margin-top: $spacing-2;
+  }
+
+  &__terms-link {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  // Submit Button
+  &__submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-2;
+    width: 100%;
+    padding: $spacing-4 $spacing-6;
+    background-color: $color-black;
+    color: $color-white;
+    border: none;
+    border-radius: $border-radius-full;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: all $transition-base;
+    min-height: 56px;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust($color-black, $lightness: 10%);
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  // Loading spinner
+  &__loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  // Error messages
+  &__error {
+    color: $color-error;
+    font-size: $font-size-sm;
+    margin-top: $spacing-2;
+    display: block;
+  }
+}
+
+// Animations
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Screen reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

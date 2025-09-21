@@ -26,9 +26,9 @@ $breakpoint-tablet: 768px;
 .header {
   width: 100%;
   background-color: $color-white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: $z-index-header;
+  padding-bottom: 24px;
 
   &__content {
     display: flex;
@@ -38,7 +38,6 @@ $breakpoint-tablet: 768px;
     min-height: 64px;
 
     @media (max-width: $breakpoint-mobile) {
-      flex-direction: column;
       gap: $spacing-sm;
       padding: $spacing-sm 0;
     }
@@ -102,6 +101,7 @@ $breakpoint-tablet: 768px;
 
     @media (max-width: $breakpoint-mobile) {
       white-space: normal;
+      display: none;
     }
   }
 

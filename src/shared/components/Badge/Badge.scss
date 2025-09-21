@@ -1,0 +1,16 @@
+@import "../../../styles/abstracts/_variables.scss";
+
+.badge {
+  display: inline-block;
+  margin-bottom: $spacing-6;
+  padding: 0 8px;
+  background: linear-gradient(86.01deg, #00f4e2 0%, #00ff7f 100%);
+  border-radius: $border-radius-sm;
+
+  &__text {
+    color: $color-text-primary;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.05em;
+  }
+}
