@@ -9,6 +9,7 @@ import { useGlobalAppDispatch } from "../../../../store/app-context";
 import type { UserData } from "../../../../types/user";
 import { useNavigate } from "react-router-dom";
 import { rimacRouteModules } from "../../../../routes";
+import LoginResponsive from "/src/assets/images/login-responsive.png";
 import Badge from "../../../../shared/components/Badge/Badge";
 
 export type InsuranceFormData = yup.InferType<typeof insuranceFormSchema>;
@@ -121,7 +122,7 @@ const InsuranceForm: FC<InsuranceFormProps> = () => {
 
           <img
             className="insurance-form__background--mobile"
-            src="/src/assets/images/login-responsive.png"
+            src={LoginResponsive}
             alt="family"
           />
         </div>
