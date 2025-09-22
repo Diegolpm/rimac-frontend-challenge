@@ -9,6 +9,10 @@
   background-color: #111827;
   padding: 2rem;
 
+  @media (max-width: $breakpoint-mobile) {
+    bottom: -50px;
+  }
+
   &__container {
     max-width: 1200px;
     margin: 0 auto;

@@ -18,7 +18,6 @@ const Login: FC = () => {
               <InsuranceForm loading={false} />
             </div>
           </div>
-          {/* <div className="login-section__background" aria-hidden="true"></div> */}
         </div>
       </section>
     </>
