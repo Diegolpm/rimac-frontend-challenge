@@ -52,7 +52,7 @@ src/
 1. **Clonar el repositorio**
 
    ```bash
-   git clone https://github.com/tu-usuario/rimac-frontend-challenge.git
+   git clone https://github.com/Diegolpm/rimac-frontend-challenge.git
    cd rimac-frontend-challenge
    ```
 
@@ -70,7 +70,7 @@ src/
    cp .env.example .env.local
    ```
 
-   Edita el archivo `.env.local` con tus configuraciones.
+   Edita el archivo `.env.development` con tus configuraciones.
 
 4. **Ejecutar en modo desarrollo**
 
@@ -118,20 +118,7 @@ npm run type-check   # Verifica los tipos TypeScript
 - [ ] Funcionalidad adicional 1
 - [ ] Funcionalidad adicional 2
 
-## 🧪 Testing
-
-El proyecto incluye pruebas unitarias para los componentes principales:
-
-```bash
-# Ejecutar todas las pruebas
-npm run test
-
-# Ejecutar pruebas con cobertura
-npm run test:coverage
-
-# Ejecutar pruebas en modo watch
-npm run test:watch
-```
+````
 
 ## 📱 Responsive Design
 
@@ -167,10 +154,10 @@ La aplicación está optimizada para:
 ### Variables de Entorno
 
 ```env
-VITE_API_BASE_URL=https://api.rimac.com
-VITE_API_KEY=your_api_key_here
-VITE_ENVIRONMENT=development
-```
+VITE_API_BASE_URL=https://rimac-front-end-challenge.netlify.app/api
+VITE_APP_NODE_ENV=development
+VITE_APP_BASENAME=/rimac
+````
 
 ### Configuración de IDE (VS Code)
 
@@ -182,7 +169,6 @@ Extensiones recomendadas:
 - ESLint
 - Auto Rename Tag
 - Bracket Pair Colorizer
-
 
 ## 📄 Licencia
 
